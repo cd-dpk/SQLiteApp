@@ -1,4 +1,4 @@
-package mcc.com.sqliteapp;
+package com.example.geet.sqliteapp;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Created by Adil on 2/2/2016.
+ * Created by chandradasdipok on 3/22/2016.
  */
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class DataBaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "student.db";
     public static final String TABLE_NAME = "student_table";
@@ -20,7 +20,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-    public DatabaseHelper(Context context) {
+    public DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
 
     }
