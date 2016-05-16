@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2016 at 03:24 PM
+-- Generation Time: May 16, 2016 at 02:53 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.2
 
@@ -33,41 +33,45 @@ CREATE TABLE `invoice` (
   `phone` varchar(15) NOT NULL,
   `address` varchar(25) NOT NULL,
   `invoice_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `complete` tinyint(1) NOT NULL
+  `invoice_status` tinyint(1) NOT NULL,
+  `total_price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `invoice`
 --
 
-INSERT INTO `invoice` (`invoice_id`, `name`, `email`, `phone`, `address`, `invoice_time`, `complete`) VALUES
-(1, 'Dipok', 'a@gmail.com', '01743972128', 'Dhaka', '2016-04-25 05:27:24', 0),
-(5, 'Adil', 'a@gmail.com', '01743972128', 'Hall', '2016-04-25 08:25:12', 0),
-(6, 'Adil', 'a@gmail.com', '01743972128', 'Hall', '2016-04-25 10:27:46', 0),
-(7, 'Adil', 'a@gmail.com', '01743972128', 'Hall', '2016-04-25 10:38:56', 0),
-(9, 'Adil', 'a@gmail.com', '01743972128', 'Hall', '2016-04-25 10:40:15', 0),
-(10, 'Adil', 'a@gmail.com', '01743972128', 'Hall', '2016-04-25 10:43:27', 0),
-(11, 'Adil', 'a@gmail.com', '01672190527', 'Dhaka', '2016-04-26 05:48:25', 0),
-(13, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-11 12:57:55', 0),
-(14, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-11 12:57:55', 0),
-(15, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-12 04:23:15', 0),
-(16, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-12 04:32:09', 0),
-(17, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-12 05:26:04', 0),
-(18, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-12 05:26:04', 0),
-(19, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-12 05:30:38', 0),
-(20, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-12 05:32:47', 0),
-(21, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-12 06:05:32', 0),
-(22, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-12 06:05:32', 0),
-(23, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-12 06:28:31', 0),
-(24, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-12 06:28:31', 0),
-(25, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-12 06:29:25', 0),
-(26, 'Adil', 'adil@gmail.com', '01174932563', 'Mohammadpur', '2016-05-12 06:43:10', 0),
-(27, 'Adil', 'adil@gmail.com', '01174932563', 'Mohammadpur', '2016-05-12 07:38:02', 0),
-(28, 'Adil', 'adil@gmail.com', '01174932563', 'Mohammadpur', '2016-05-12 07:38:02', 0),
-(29, 'Adil', 'adil@gmail.com', '01174932563', 'Mohammadpur', '2016-05-12 07:39:02', 0),
-(30, 'Adil', 'adil@gmail.com', '01672198527', 'Hazaribag, Dhaka-1209', '2016-05-12 10:21:26', 0),
-(31, 'Adil', 'adil@gmail.com', '01174932563', 'Mohammadpur', '2016-05-12 13:06:29', 0),
-(32, 'Adil', 'adil@gmail.com', '01174932563', 'Mohammadpur', '2016-05-12 13:11:52', 0);
+INSERT INTO `invoice` (`invoice_id`, `name`, `email`, `phone`, `address`, `invoice_time`, `invoice_status`, `total_price`) VALUES
+(1, 'Dipok', 'a@gmail.com', '01743972128', 'Dhaka', '2016-05-16 10:11:41', 0, 250),
+(5, 'Adil', 'a@gmail.com', '01743972128', 'Hall', '2016-05-16 10:11:41', 0, 250),
+(6, 'Adil', 'a@gmail.com', '01743972128', 'Hall', '2016-05-16 10:24:58', 1, 250),
+(7, 'Adil', 'a@gmail.com', '01743972128', 'Hall', '2016-05-16 10:11:41', 0, 250),
+(9, 'Adil', 'a@gmail.com', '01743972128', 'Hall', '2016-05-16 10:11:41', 0, 250),
+(10, 'Adil', 'a@gmail.com', '01743972128', 'Hall', '2016-05-16 10:24:58', 1, 250),
+(11, 'Adil', 'a@gmail.com', '01672190527', 'Dhaka', '2016-05-16 10:11:41', 0, 250),
+(13, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:11:41', 0, 250),
+(14, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:24:58', 1, 250),
+(15, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:11:41', 0, 250),
+(16, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:24:58', 1, 250),
+(17, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:11:41', 0, 250),
+(18, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:24:58', 1, 250),
+(19, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:11:41', 0, 250),
+(20, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:24:58', 1, 250),
+(21, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:11:41', 0, 250),
+(22, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:24:58', 1, 250),
+(23, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:11:41', 0, 250),
+(24, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:24:58', 1, 250),
+(25, 'Dipok', 'dipok@gmail.com', '01743972128', 'Farmgate', '2016-05-16 10:11:41', 0, 250),
+(26, 'Adil', 'adil@gmail.com', '01174932563', 'Mohammadpur', '2016-05-16 10:24:58', 1, 250),
+(27, 'Adil', 'adil@gmail.com', '01174932563', 'Mohammadpur', '2016-05-16 10:11:41', 0, 250),
+(28, 'Adil', 'adil@gmail.com', '01174932563', 'Mohammadpur', '2016-05-16 10:24:58', 1, 250),
+(29, 'Adil', 'adil@gmail.com', '01174932563', 'Mohammadpur', '2016-05-16 10:11:41', 0, 250),
+(30, 'Adil', 'adil@gmail.com', '01672198527', 'Hazaribag, Dhaka-1209', '2016-05-16 10:24:58', 1, 250),
+(31, 'Adil', 'adil@gmail.com', '01174932563', 'Mohammadpur', '2016-05-16 10:11:41', 0, 250),
+(32, 'Adil', 'adil@gmail.com', '01174932563', 'Mohammadpur', '2016-05-16 10:24:58', 1, 250),
+(33, 'Adil', 'adil@mail.com', '01743972128', 'Pabna', '2016-05-16 10:11:41', 0, 250),
+(34, 'Adil', 'adil@mail.com', '01743972128', 'Pabna', '2016-05-16 10:24:58', 1, 250),
+(35, 'Dipok', 'dipok@gmail.com', '01743972128', 'Dhaka', '2016-05-16 10:11:41', 0, 250);
 
 --
 -- Indexes for dumped tables
@@ -87,7 +91,7 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
