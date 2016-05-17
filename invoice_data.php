@@ -23,7 +23,7 @@
 				$temp_var ="[";
 				while($row = mysqli_fetch_assoc($result)){
 					if($temp_var != "[" ) $temp_var .=",";
-					$temp_var .= "{\"invoice_id\":".$row["invoice_id"].",\"phone\":\"".$row["phone"]."\",\"total_price\":".$row["total_price"].",\"invoice_status\":\"".$row["invoice_status"]."\"}";
+					$temp_var .= "{\"invoice_id\":".$row["invoice_id"].",\"invoice_time\":\"".$row["invoice_time"]."\",\"phone\":\"".$row["phone"]."\",\"total_price\":".$row["total_price"].",\"invoice_status\":\"".$row["invoice_status"]."\"}";
 				}
 				$temp_var .="]";
 				$var .= $temp_var;
