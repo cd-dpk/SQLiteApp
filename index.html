@@ -1,22 +1,15 @@
 <html>
 	<head>
 		<title>Home</title>
-		<style>
-			a{
-				color: black;
-				border: 4px 4px 0 0;
-				width:50px;
-				height:20px;
-				text-decoration: underline;
-				padding-right: 50px;
-				
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="layout.css"/>
+		<script src="commonjs.js"></script>
 	</head>
-	<body>
-		<div width="100%" align="center">
-		<a href="categories.php">Category</a> <a href="products.php">Product</a> <a href="invoices.php">Invoice</a> <a href="orders.php">Orders</a> <a href="#">Invoice&Orders</a>
+	<body onload="loadMenu()">
+		<div id="div_header">
+			<a href="" align="left" style="">BAGDOOM.COM</a>
+			<button padding-left="500px" name ="LOGOUT" align="right"> LOGOUT</button>
 		</div>
-	</body>
-	
+		<div id="div_menu" ></div>
+		<div id="div_content"></div>
+	</body>	
 </html>
